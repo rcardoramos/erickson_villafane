@@ -5,12 +5,24 @@ body {
     scroll-behavior: smooth;
 }
 
+.bg-blue-dpi {
+    background: red;
+}
+
+/* .tx-color-gold {
+    background-color: #dba756;
+} */
+
+.green-gradient {
+    background-color: #00F5BC;
+}
+
 .gold-gradient {
-    background: linear-gradient(90deg, #D4AF37 0%, #F5D07C 50%, #D4AF37 100%);
+    background: #00F5BC;
 }
 
 .blue-gradient {
-    background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+    background: linear-gradient(135deg, #0d3153 0%, #3b82f6 100%);
 }
 
 .hero-pattern {
@@ -27,7 +39,7 @@ body {
     display: block;
     width: 0;
     height: 2px;
-    background: #D4AF37;
+    background: #00F5BC;
     transition: width .3s;
 }
 
