@@ -4,47 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Erickson Villafañe | Emprendedor & Mentor</title>
+    <title>Erickson Villafane | Emprendedor & Mentor</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
-
-        body {
-            font-family: 'Montserrat', sans-serif;
-            scroll-behavior: smooth;
-        }
-
-        .gold-gradient {
-            background: linear-gradient(90deg, #D4AF37 0%, #F5D07C 50%, #D4AF37 100%);
-        }
-
-        .blue-gradient {
-            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
-        }
-
-        .hero-pattern {
-            background-image: radial-gradient(circle at 10% 20%, rgba(30, 58, 138, 0.1) 0%, transparent 25%);
-        }
-
-        .card-hover:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-        }
-
-        .nav-link::after {
-            content: '';
-            display: block;
-            width: 0;
-            height: 2px;
-            background: #D4AF37;
-            transition: width .3s;
-        }
-
-        .nav-link:hover::after {
-            width: 100%;
-        }
-    </style>
+    <link rel="stylesheet" href="./CSS/style.css">
 </head>
 
 <body class="bg-white text-gray-800">
@@ -54,7 +17,7 @@
             <div class="flex items-center justify-between">
                 <div class="flex items-center">
                     <span class="text-2xl font-bold bg-clip-text text-transparent gold-gradient">Erickson
-                        Villafañe</span>
+                        Villafane</span>
                 </div>
                 <nav class="hidden md:flex space-x-8">
                     <a href="#inicio" class="nav-link font-medium text-blue-900 hover:text-blue-700">Inicio</a>
@@ -73,35 +36,33 @@
     </header>
 
     <!-- Hero Section -->
-    <section id="inicio" class="min-h-screen flex items-center justify-center pt-20 hero-pattern">
+    <section id="inicio" class="min-h-screen flex items-center justify-center pt-20 bg-blue-900">
         <div class="container mx-auto px-6 py-20 flex flex-col md:flex-row items-center">
-            <div class="md:w-1/2 mb-10 md:mb-0">
-                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-blue-900 leading-tight">
+            <!-- Texto -->
+            <div class="md:w-1/2 mb-10 md:mb-0 text-white">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
                     Transformando ideas en <span class="bg-clip-text text-transparent gold-gradient">realidades</span>
                 </h1>
-                <p class="text-lg md:text-xl text-gray-600 mb-8">
-                    Hola, soy Erickson Villafañe. Emprendedor, consultor y mentor dedicado a ayudar a otros a alcanzar
+                <p class="text-lg md:text-xl text-blue-100 mb-8">
+                    Hola, soy Erickson Villafane. Empresario, consultor y mentor dedicado a ayudar a otros a alcanzar
                     su máximo potencial.
                 </p>
                 <div class="flex space-x-4">
                     <a href="#cursos"
-                        class="px-8 py-3 bg-blue-900 text-white rounded-full font-medium hover:bg-blue-800 transition duration-300 transform hover:scale-105">
+                        class="px-8 py-3 bg-white text-blue-900 rounded-full font-medium hover:bg-blue-100 transition duration-300 transform hover:scale-105">
                         Explorar cursos
                     </a>
                     <a href="#contacto"
-                        class="px-8 py-3 border-2 border-blue-900 text-blue-900 rounded-full font-medium hover:bg-blue-50 transition duration-300 transform hover:scale-105">
+                        class="px-8 py-3 border-2 border-white text-white rounded-full font-medium hover:bg-white hover:text-blue-900 transition duration-300 transform hover:scale-105">
                         Contactar
                     </a>
                 </div>
             </div>
+
+            <!-- Imagen -->
             <div class="md:w-1/2 flex justify-center">
-                <div class="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96">
-                    <div class="absolute inset-0 bg-blue-900 rounded-full opacity-10 animate-pulse"></div>
-                    <div class="absolute inset-4 bg-blue-900 rounded-full opacity-5 animate-pulse"></div>
-                    <img src="./assets/img/FOTO-ERICKSONJJJJJ.png"
-                        alt="Erickson Villafañe, hombre empresario con traje azul marino y corbata dorada, de pie en un entorno profesional moderno"
-                        class="relative w-full h-full object-cover rounded-full border-8 border-white shadow-xl">
-                </div>
+                <img src="./assets/img/FOTO-ERICKSONJJJJJ.png" alt="Erickson Villafane"
+                    class="w-72 md:w-96 lg:w-[500px] object-contain drop-shadow-2xl transition-transform duration-300 hover:scale-105">
             </div>
         </div>
     </section>
@@ -194,7 +155,7 @@
                                 class="h-12 w-12 rounded-full bg-blue-100 flex items-center justify-center shadow-inner">
                                 <i class="fas fa-briefcase text-blue-900 text-xl"></i>
                             </div>
-                            <h3 class="ml-4 text-xl font-bold text-blue-900">InnovaCorp</h3>
+                            <h3 class="ml-4 text-xl font-bold text-blue-900">Dominick Pro Inmobiliaria</h3>
                         </div>
                         <p class="text-gray-600 mb-4">
                             Consultoría empresarial especializada en transformación digital y estrategias de
@@ -220,7 +181,7 @@
                                 class="h-12 w-12 rounded-full bg-blue-100 flex items-center justify-center shadow-inner">
                                 <i class="fas fa-lightbulb text-blue-900 text-xl"></i>
                             </div>
-                            <h3 class="ml-4 text-xl font-bold text-blue-900">FutureLabs</h3>
+                            <h3 class="ml-4 text-xl font-bold text-blue-900">Intercapital Perú</h3>
                         </div>
                         <p class="text-gray-600 mb-4">
                             Incubadora de startups tecnológicas con foco en inteligencia artificial y blockchain.
@@ -503,7 +464,7 @@
                                 </div>
                                 <div class="ml-4">
                                     <h4 class="font-medium">Ubicación</h4>
-                                    <p class="text-sm opacity-80">Caracas, Venezuela</p>
+                                    <p class="text-sm opacity-80">Perú - Lima</p>
                                 </div>
                             </div>
 
@@ -529,7 +490,7 @@
                                 </div>
                                 <div class="ml-4">
                                     <h4 class="font-medium">Teléfono</h4>
-                                    <p class="text-sm opacity-80">+58 412-5557890</p>
+                                    <p class="text-sm opacity-80">+51 908 942 105</p>
                                 </div>
                             </div>
                         </div>
@@ -537,19 +498,19 @@
                         <div class="mt-8 pt-6 border-t border-white border-opacity-20">
                             <h3 class="text-xl font-bold mb-4">Sígueme</h3>
                             <div class="flex space-x-4">
-                                <a href="#"
+                                <a href="https://www.linkedin.com/in/erickson-villafane" target="_blank"
                                     class="h-10 w-10 rounded-full bg-white bg-opacity-20 flex items-center justify-center hover:bg-opacity-30 transition duration-300">
                                     <i class="fab fa-linkedin-in"></i>
                                 </a>
-                                <a href="#"
+                                <a href="https://www.facebook.com/EricksonVillafaneBienesRaices1/" target="_blank"
                                     class="h-10 w-10 rounded-full bg-white bg-opacity-20 flex items-center justify-center hover:bg-opacity-30 transition duration-300">
-                                    <i class="fab fa-twitter"></i>
+                                    <i class="fab fa-facebook"></i>
                                 </a>
-                                <a href="#"
+                                <a href="https://www.instagram.com/ericksonvillafanebienesraices/" target="_blank"
                                     class="h-10 w-10 rounded-full bg-white bg-opacity-20 flex items-center justify-center hover:bg-opacity-30 transition duration-300">
                                     <i class="fab fa-instagram"></i>
                                 </a>
-                                <a href="#"
+                                <a href="https://www.youtube.com/@ericksonvillafanebienesraices" target="_blank"
                                     class="h-10 w-10 rounded-full bg-white bg-opacity-20 flex items-center justify-center hover:bg-opacity-30 transition duration-300">
                                     <i class="fab fa-youtube"></i>
                                 </a>
@@ -601,12 +562,12 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-blue-900 text-white py-10">
+    <footer class="bg-blue-900 text-white pt-10 pb-4">
         <div class="container mx-auto px-6">
             <div class="flex flex-col md:flex-row justify-between items-center">
                 <div class="mb-6 md:mb-0">
                     <span class="text-2xl font-bold bg-clip-text text-transparent gold-gradient">Erickson
-                        Villafañe</span>
+                        Villafane</span>
                     <p class="mt-2 text-sm opacity-80">Emprendedor · Mentor · Educador</p>
                 </div>
 
@@ -620,17 +581,21 @@
                 </div>
             </div>
 
-            <div class="border-t border-blue-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
-                <p class="text-sm opacity-70 mb-4 md:mb-0">© 2023 Erickson Villafañe. Todos los derechos reservados.</p>
-
-                <div class="flex space-x-4">
-                    <a href="#" class="text-sm opacity-70 hover:opacity-100 transition duration-300">Términos</a>
-                    <a href="#" class="text-sm opacity-70 hover:opacity-100 transition duration-300">Privacidad</a>
-                    <a href="#" class="text-sm opacity-70 hover:opacity-100 transition duration-300">Cookies</a>
-                </div>
+            <div class="border-t border-blue-800 mt-8 pt-6 text-center space-y-2">
+                <p class="text-sm opacity-70">© 2025 Erickson Villafane. Todos los derechos reservados.</p>
+                <p class=" opacity-70 text-center text-xs text-white">
+                    Desarrollado con ❤️ por
+                    <a href="https://minddevperu.com/" target="_blank"
+                        class="underline hover:text-blue-400 transition duration-300">
+                        Minddev
+                    </a>
+                </p>
             </div>
         </div>
     </footer>
+
+
+
 
     <!-- Floating Action Button -->
     <div class="fixed bottom-6 right-6">
@@ -640,36 +605,7 @@
         </a>
     </div>
 
-    <script>
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-
-        // Mobile menu toggle functionality
-        const mobileMenuButton = document.querySelector('.md\\:hidden button');
-        const navLinks = document.querySelector('nav');
-
-        mobileMenuButton.addEventListener('click', () => {
-            navLinks.classList.toggle('hidden');
-        });
-
-        // Form submission handling
-        const contactForm = document.querySelector('form');
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-
-            // Here you would typically send the form data to a server
-            alert('Gracias por tu mensaje. Me pondré en contacto contigo pronto.');
-            contactForm.reset();
-        });
-    </script>
+    <script src="./JS/script.js"></script>
 </body>
 
 </html>

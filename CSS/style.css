@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    scroll-behavior: smooth;
+}
+
+.gold-gradient {
+    background: linear-gradient(90deg, #D4AF37 0%, #F5D07C 50%, #D4AF37 100%);
+}
+
+.blue-gradient {
+    background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+}
+
+.hero-pattern {
+    background-image: radial-gradient(circle at 10% 20%, rgba(30, 58, 138, 0.1) 0%, transparent 25%);
+}
+
+.card-hover:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.nav-link::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #D4AF37;
+    transition: width .3s;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
