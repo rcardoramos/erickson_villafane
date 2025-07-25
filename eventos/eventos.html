@@ -32,19 +32,24 @@
     </header>
 
     <!-- Hero con video -->
-    <section class="pt-32 pb-20 px-6 bg-gray-100 text-center">
-        <div class="container mx-auto">
-            <h1 class="text-4xl md:text-5xl font-bold text-blue-900 mb-6">Próximos Eventos</h1>
-            <p class="text-gray-600 max-w-2xl mx-auto mb-8">
+    <section class="relative min-h-screen flex items-center justify-center bg-cover bg-center text-center text-white"
+        style="background-image: url('../assets/img/FONDO1.png');">
+        <!-- Capa oscura -->
+        <div class="absolute inset-0 bg-black/50"></div>
+
+        <!-- Contenido -->
+        <div class="relative z-10 container mx-auto px-6">
+            <h1 class="text-4xl md:text-5xl font-bold mb-6">Próximos Eventos</h1>
+            <p class="text-gray-200 max-w-2xl mx-auto mb-8">
                 Descubre mis próximos viajes, charlas y experiencias diseñadas para tu crecimiento personal y
                 profesional.
             </p>
-            <div class="relative max-w-3xl mx-auto">
+            <!-- <div class="relative max-w-3xl mx-auto">
                 <video controls class="w-full rounded-lg shadow-xl">
                     <source src="../assets/video/intro-eventos.mp4" type="video/mp4">
                     Tu navegador no soporta la reproducción de videos.
                 </video>
-            </div>
+            </div> -->
         </div>
     </section>
 
