@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html style="scroll-behavior: smooth;" lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evento Especial - Empresa</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        .hero-video {
+            position: relative;
+            overflow: hidden;
+            height: 60vh;
+            min-height: 400px;
+        }
+
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7));
+        }
+
+        .countdown-item {
+            min-width: 80px;
+        }
+
+        .btn-register {
+            transition: all 0.3s ease;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+        }
+
+        .btn-register:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-submit {
+            background: linear-gradient(135deg, var(--accent), #d81b60);
+        }
+
+        .form-input {
+            transition: all 0.3s ease;
+        }
+
+        .form-input:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.2);
+        }
+
+        .floating-logo {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-video {
+                height: 50vh;
+            }
+
+            .countdown-item {
+                min-width: 60px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class=" bg-[#0A2342] w-full flex justify-center py-4">
+        <img src="../assets/img/DPI-EMPRESA-PNG.png" alt="Logo de la empresa" class="h-12 md:h-24">
+    </div>
+
+    <!-- HERO CON VIDEO -->
+    <section id="inicio"
+        class="min-h-[90vh] bg-[#0A2342] flex items-center justify-center py-20 px-4 text-white text-center">
+        <div class="max-w-4xl mx-auto">
+
+            <h1 class="text-5xl md:text-10xl lg:text-7xl font-bold mb-10 leading-tight">
+                Encuentra tu propiedad <br> <span class="text-yellow-500 ">ideal</span>
+            </h1>
+
+            <p class="lg:text-2xl"> Somos especialistas en conectar a las personas con los mejores espacios para vivir,
+                trabajar y crecer.
+            </p>
+            <br>
+            <div class="relative rounded-lg overflow-hidden shadow-lg mb-12 max-w-3xl mx-auto">
+                <video autoplay muted loop playsinline class="w-full h-full object-cover">
+                    <source src="../assets/video/VIDEO INVITACIÓN EVENTO.mp4" type="video/mp4">
+                    Tu navegador no soporta la reproducción de videos.
+                </video>
+            </div>
+
+            <!-- CONTADOR -->
+            <div class="bg-yellow-500 bg-opacity-90 text-gray-800 rounded-lg p-6 shadow-lg max-w-md mx-auto">
+                <h2 class="text-2xl font-semibold mb-4 text-center">¡Faltan solo!</h2>
+                <div class="flex justify-center space-x-4 md:space-x-6">
+                    <div class="countdown-item bg-gray-100 rounded-lg p-3 text-center">
+                        <div class="text-3xl font-bold" id="days">00</div>
+                        <div class="text-sm text-gray-500">Días</div>
+                    </div>
+                    <div class="countdown-item bg-gray-100 rounded-lg p-3 text-center">
+                        <div class="text-3xl font-bold" id="hours">00</div>
+                        <div class="text-sm text-gray-500">Horas</div>
+                    </div>
+                    <div class="countdown-item bg-gray-100 rounded-lg p-3 text-center">
+                        <div class="text-3xl font-bold" id="minutes">00</div>
+                        <div class="text-sm text-gray-500">Minutos</div>
+                    </div>
+                    <div class="countdown-item bg-gray-100 rounded-lg p-3 text-center">
+                        <div class="text-3xl font-bold" id="seconds">00</div>
+                        <div class="text-sm text-gray-500">Segundos</div>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-6">
+                <a href="#formulario"
+                    class="inline-block bg-yellow-500 hover:bg-yellow-600 text-white font-medium rounded-lg px-8 py-3 shadow-md hover:shadow-lg transition duration-300">
+                    Registrarte
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="py-16 px-4 md:px-8 bg-[#0A2342]">
+        <div class="max-w-5xl mx-auto text-center">
+            <h2 class="text-4xl font-bold text-white mb-8">Conoce más sobre nuestro evento</h2>
+            <p class="text-lg text-gray-100 mb-12">
+                Una jornada única donde aprenderás, conectarás y vivirás una experiencia inolvidable.
+            </p>
+
+            <!-- Imagen del evento -->
+            <div class="rounded-xl overflow-hidden shadow-lg max-w-4xl mx-auto">
+                <img src="../assets/img/DPI-21-08.jpg" alt="Imagen del evento" class="w-full h-auto">
+            </div>
+        </div>
+    </section>
+
+    <!-- REGISTRO FORM -->
+    <section id="formulario" class="py-16 px-4 md:px-8 bg-[#0A2342]">
+        <div class="max-w-3xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-5xl font-bold text-white mb-6">No te pierdas esta oportunidad</h2>
+                <p class="text-lg text-gray-100 max-w-2xl mx-auto">
+                    Regístrate ahora para garantizar tu acceso al evento más esperado del año.
+                </p>
+            </div>
+
+            <form action="https://getform.io/f/apjzmrna" method="POST" class="bg-gray-50 rounded-xl p-8 shadow-md">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                    <div>
+                        <label for="name" class="block text-gray-700 font-medium mb-2">Nombre Completo</label>
+                        <input type="text" id="name" name="name" required
+                            class="form-input w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-gray-700 font-medium mb-2">Correo Electrónico</label>
+                        <input type="email" id="email" name="email" required
+                            class="form-input w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    </div>
+                    <div class="md:col-span-2">
+                        <label for="phone" class="block text-gray-700 font-medium mb-2">Número de Celular</label>
+                        <input type="tel" id="phone" name="phone" required
+                            class="form-input w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    </div>
+                </div>
+
+                <div class="text-center mt-8">
+                    <button type="submit"
+                        class="bg-yellow-500 hover:bg-yellow-600 text-white font-medium rounded-lg px-8 py-3 shadow-md hover:shadow-lg transition duration-300">
+                        Confirmar Registro
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer class="bg-gray-800 text-white py-8 px-4 md:px-8">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center">
+            <!-- Logo -->
+            <div class="mb-4 md:mb-0">
+                <img src="../assets/img/DPI-EMPRESA-PNG.png" alt="Logo de la empresa" class="h-10 md:h-12">
+            </div>
+
+            <!-- Información del evento y redes -->
+            <div class="text-center md:text-right">
+                <div class="flex justify-center md:justify-end space-x-4 mt-2">
+                    <a href="https://www.facebook.com/DominickProInmobiliaria" target="_blank" aria-label="Facebook">
+                        <svg class="w-5 h-5 text-gray-300 hover:text-blue-500 transition" fill="currentColor"
+                            viewBox="0 0 24 24">
+                            <path
+                                d="M22 12.07C22 6.48 17.52 2 12 2S2 6.48 2 12.07c0 4.84 3.44 8.85 8 9.8v-6.93H8v-2.87h2V9.93c0-2.07 1.23-3.22 3.12-3.22.9 0 1.84.16 1.84.16v2.02h-1.04c-1.03 0-1.35.64-1.35 1.29v1.55h2.3l-.37 2.87h-1.93v6.93c4.56-.95 8-4.96 8-9.8z" />
+                        </svg>
+                    </a>
+                    <a href="https://www.instagram.com/dominickproinmobiliaria/#" target="_blank"
+                        aria-label="Instagram">
+                        <svg class="w-5 h-5 text-gray-300 hover:text-pink-500 transition" fill="currentColor"
+                            viewBox="0 0 24 24">
+                            <path
+                                d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5a4.25 4.25 0 0 0 4.25-4.25v-8.5A4.25 4.25 0 0 0 16.25 3.5h-8.5zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 1.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7zm4.88-.88a1.13 1.13 0 1 1 0 2.25 1.13 1.13 0 0 1 0-2.25z" />
+                        </svg>
+                    </a>
+                    <a href="https://www.linkedin.com/company/dominick-pro-inmobiliaria/" target="_blank"
+                        aria-label="LinkedIn">
+                        <svg class="w-5 h-5 text-gray-300 hover:text-blue-300 transition" fill="currentColor"
+                            viewBox="0 0 24 24">
+                            <path
+                                d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.5 8.25h4V24h-4V8.25zm7.5 0h3.84v2.13h.06c.53-1 1.84-2.13 3.8-2.13 4.06 0 4.81 2.66 4.81 6.11V24h-4v-7.54c0-1.8-.03-4.13-2.52-4.13-2.52 0-2.91 1.97-2.91 4V24h-4V8.25z" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Créditos -->
+        <div class="mt-6">
+            <p class="text-center text-xs text-gray-300">
+                Desarrollado con ❤️ por
+                <a href="https://minddevperu.com/" target="_blank"
+                    class="underline hover:text-blue-400 transition duration-300">
+                    Minddev
+                </a>
+            </p>
+        </div>
+    </footer>
+
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // 21 de agosto de 2025, 18:45 hora local 
+            const eventDate = new Date(2025, 7, 21, 18, 45, 0);
+
+            const pad = n => String(n).padStart(2, "0");
+
+            const tick = () => {
+                const now = new Date();
+                const distance = eventDate - now;
+
+                if (distance <= 0) {
+                    clearInterval(timer);
+                    document.getElementById('days').textContent = '00';
+                    document.getElementById('hours').textContent = '00';
+                    document.getElementById('minutes').textContent = '00';
+                    document.getElementById('seconds').textContent = '00';
+                    return;
+                }
+
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                document.getElementById('days').textContent = pad(days);
+                document.getElementById('hours').textContent = pad(hours);
+                document.getElementById('minutes').textContent = pad(minutes);
+                document.getElementById('seconds').textContent = pad(seconds);
+            };
+            tick();
+            const timer = setInterval(tick, 1000);
+        });
+    </script>
+</body>
+
+</html>
