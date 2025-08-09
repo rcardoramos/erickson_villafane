@@ -4,12 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Evento Especial - Empresa</title>
+    <title>Evento Especial - Dominick Pro Inmobiliaria</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="shortcut icon" href="/assets/img/favicon.png" type=" image/x-icon">
     <style>
         body {
             font-family: 'Poppins', sans-serif;
@@ -91,10 +92,11 @@
 </head>
 
 <body>
-    <div class=" bg-[#0A2342] w-full flex justify-center py-4">
-        <img src="../assets/img/DPI-EMPRESA-PNG.png" alt="Logo de la empresa" class="h-12 md:h-24">
-    </div>
-
+    <a href="https://dominickpro.com/" target="_blank">
+        <div class=" bg-[#0A2342] w-full flex justify-center py-4">
+            <img src="../assets/img/DPI-EMPRESA-PNG.png" alt="Logo de la empresa" class="h-12 md:h-24">
+        </div>
+    </a>
     <!-- HERO CON VIDEO -->
     <section id="inicio"
         class="min-h-[90vh] bg-[#0A2342] flex items-center justify-center py-20 px-4 text-white text-center">
@@ -109,7 +111,7 @@
             </p>
             <br>
             <div class="relative rounded-lg overflow-hidden shadow-lg mb-12 max-w-3xl mx-auto">
-                <video autoplay muted loop playsinline class="w-full h-full object-cover">
+                <video autoplay loop playsinline class="w-full h-full object-cover">
                     <source src="../assets/video/VIDEO INVITACIÓN EVENTO.mp4" type="video/mp4">
                     Tu navegador no soporta la reproducción de videos.
                 </video>
@@ -140,7 +142,7 @@
             <div class="mt-6">
                 <a href="#formulario"
                     class="inline-block bg-yellow-500 hover:bg-yellow-600 text-white font-medium rounded-lg px-8 py-3 shadow-md hover:shadow-lg transition duration-300">
-                    Registrarte
+                    Reservar mi cupo
                 </a>
             </div>
 
@@ -171,34 +173,44 @@
                 </p>
             </div>
 
-            <form action="https://getform.io/f/apjzmrna" method="POST" class="bg-gray-50 rounded-xl p-8 shadow-md">
+            <form id="registroForm" action="https://getform.io/f/bejeynma" method="POST"
+                class="bg-white rounded-xl p-8 shadow-md text-left">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                     <div>
-                        <label for="name" class="block text-gray-700 font-medium mb-2">Nombre Completo</label>
-                        <input type="text" id="name" name="name" required
-                            class="form-input w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <label for="name" class="block text-[#183662] font-medium mb-2">Nombre Completo</label>
+                        <input id="name" name="name" type="text" required
+                            class="form-input w-full px-4 py-3 rounded-lg border border-gray-300">
                     </div>
                     <div>
-                        <label for="email" class="block text-gray-700 font-medium mb-2">Correo Electrónico</label>
-                        <input type="email" id="email" name="email" required
-                            class="form-input w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <label for="email" class="block text-[#183662] font-medium mb-2">Correo Electrónico</label>
+                        <input id="email" name="email" type="email" required
+                            class="form-input w-full px-4 py-3 rounded-lg border border-gray-300">
                     </div>
                     <div class="md:col-span-2">
-                        <label for="phone" class="block text-gray-700 font-medium mb-2">Número de Celular</label>
-                        <input type="tel" id="phone" name="phone" required
-                            class="form-input w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <label for="phone" class="block text-[#183662] font-medium mb-2">Número de Celular</label>
+                        <input id="phone" name="phone" type="tel" required
+                            class="form-input w-full px-4 py-3 rounded-lg border border-gray-300">
                     </div>
                 </div>
 
-                <div class="text-center mt-8">
+                <div class="text-center mt-6">
                     <button type="submit"
-                        class="bg-yellow-500 hover:bg-yellow-600 text-white font-medium rounded-lg px-8 py-3 shadow-md hover:shadow-lg transition duration-300">
+                        class="bg-[#183662] text-white font-semibold rounded-lg px-8 py-3 shadow-md hover:shadow-lg hover:bg-[#163055] transition">
                         Confirmar Registro
                     </button>
                 </div>
             </form>
         </div>
     </section>
+
+    <div id="toast"
+        class="fixed bottom-6 right-6 z-50 hidden items-center gap-3 max-w-sm rounded-lg bg-white text-[#183662] shadow-xl px-4 py-3 border border-[#183662]/15"
+        role="alert" aria-live="polite" aria-atomic="true">
+        <svg viewBox="0 0 24 24" class="w-5 h-5 text-green-600" fill="currentColor">
+            <path d="M12 2a10 10 0 1 0 .001 20.001A10 10 0 0 0 12 2m-1 15-4-4 1.41-1.41L11 13.17l5.59-5.59L18 9z" />
+        </svg>
+        <span id="toastMsg" class="text-sm font-medium">¡Gracias por registrarte!</span>
+    </div>
 
 
     <!-- FOOTER -->
@@ -251,7 +263,6 @@
         </div>
     </footer>
 
-    </div>
 
     <script>
         document.addEventListener("DOMContentLoaded", () => {
@@ -286,6 +297,49 @@
             tick();
             const timer = setInterval(tick, 1000);
         });
+
+        (function () {
+            const form = document.getElementById('registroForm');
+            const toast = document.getElementById('toast');
+            const toastMsg = document.getElementById('toastMsg');
+
+            function showToast(message = '¡Gracias por registrarte!', ms = 3500) {
+                toastMsg.textContent = message;
+                toast.classList.remove('hidden');
+                toast.classList.add('flex', 'animate-[fadeIn_.2s_ease-out]');
+                // Ocultar después de X ms
+                setTimeout(() => {
+                    toast.classList.add('animate-[fadeOut_.2s_ease-in]');
+                    setTimeout(() => {
+                        toast.classList.add('hidden');
+                        toast.classList.remove('flex', 'animate-[fadeIn_.2s_ease-out]', 'animate-[fadeOut_.2s_ease-in]');
+                    }, 180);
+                }, ms);
+            }
+
+            // Enviar con fetch a Getform para evitar redirección
+            form.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const fd = new FormData(form);
+
+                try {
+                    const res = await fetch(form.action, {
+                        method: 'POST',
+                        body: fd,
+                        headers: { 'Accept': 'application/json' }
+                    });
+
+                    if (res.ok) {
+                        form.reset();
+                        showToast('¡Gracias por registrarte! Te escribiremos pronto.');
+                    } else {
+                        showToast('Ocurrió un problema. Inténtalo nuevamente.', 4000);
+                    }
+                } catch (err) {
+                    showToast('Sin conexión. Inténtalo nuevamente.', 4000);
+                }
+            });
+        })();
     </script>
 </body>
 

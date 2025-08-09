@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html style="scroll-behavior: smooth;" lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Desayuno de Inversionistas - Intercapital Perú</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="shortcut icon" href="/assets/img/favicon.png" type="image/x-icon">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #183662;
+            color: #fff
+        }
+
+        .form-input {
+            transition: all .2s ease;
+            color: #183662;
+            background-color: #fff;
+            caret-color: #183662;
+        }
+
+        .form-input:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(24, 54, 98, .25)
+        }
+
+        .countdown-item {
+            min-width: 80px
+        }
+
+        @media (max-width:768px) {
+            .countdown-item {
+                min-width: 60px
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-[#183662]">
+
+    <a href="https://intercapitalperu.com/" target="_blank">
+        <div class="w-full flex justify-center py-6 bg-[#183662]">
+            <img src="../assets/img/ICP-EMPRESA-PNG.png" alt="Intercapital Perú" class="h-12 md:h-24">
+        </div>
+    </a>
+    <!-- HERO -->
+    <section id="inicio" class="min-h-[90vh] bg-[#183662] flex items-center justify-center py-16 px-4 text-center">
+        <div class="max-w-4xl mx-auto">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+                Desayuno de Empresarial<br>
+                <span class="text-sky-300">Intercapital Perú</span>
+            </h1>
+            <p class="text-white/80 lg:text-xl max-w-3xl mx-auto mb-10">
+                Conecta con oportunidades inmobiliarias, conoce proyectos en vivo y aprende a estructurar inversiones
+                seguras y rentables.
+            </p>
+
+            <div class="relative rounded-xl overflow-hidden shadow-lg mb-10 max-w-3xl mx-auto border border-white/10">
+                <video autoplay muted loop playsinline class="w-full h-full object-cover">
+                    <source src="../assets/video/desayuno-inversionistas.mp4" type="video/mp4">
+                    Tu navegador no soporta la reproducción de videos.
+                </video>
+            </div>
+
+            <!-- CONTADOR -->
+            <div class="bg-white text-[#183662] rounded-xl p-6 shadow-lg max-w-md mx-auto">
+                <h2 class="text-2xl font-semibold mb-4 text-center">¡Faltan solo!</h2>
+                <div class="flex justify-center gap-4 md:gap-6">
+                    <div class="countdown-item bg-gray-100 rounded-lg p-3 text-center">
+                        <div id="days" class="text-3xl font-bold">00</div>
+                        <div class="text-sm text-gray-600">Días</div>
+                    </div>
+                    <div class="countdown-item bg-gray-100 rounded-lg p-3 text-center">
+                        <div id="hours" class="text-3xl font-bold">00</div>
+                        <div class="text-sm text-gray-600">Horas</div>
+                    </div>
+                    <div class="countdown-item bg-gray-100 rounded-lg p-3 text-center">
+                        <div id="minutes" class="text-3xl font-bold">00</div>
+                        <div class="text-sm text-gray-600">Minutos</div>
+                    </div>
+                    <div class="countdown-item bg-gray-100 rounded-lg p-3 text-center">
+                        <div id="seconds" class="text-3xl font-bold">00</div>
+                        <div class="text-sm text-gray-600">Segundos</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-7">
+                <a href="#formulario"
+                    class="inline-block bg-white text-[#183662] font-semibold rounded-lg px-8 py-3 shadow-md hover:shadow-lg hover:bg-sky-300 transition">
+                    Reservar mi cupo
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- IMAGEN / INFO -->
+    <section class="py-16 px-4 bg-[#183662]">
+        <div class="max-w-5xl mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">¿Qué verás en el desayuno?</h2>
+            <p class="text-white/80 max-w-3xl mx-auto mb-10">
+                Actualidad del mercado, pipeline de proyectos, casos reales de inversión y networking con nuestro equipo
+                experto.
+            </p>
+            <div class="rounded-xl overflow-hidden shadow-lg max-w-4xl mx-auto border border-white/10">
+                <img src="../assets/img/ICP-23-08.png" alt="Desayuno de inversionistas" class="w-full h-auto">
+            </div>
+        </div>
+    </section>
+
+    <!-- FORMULARIO -->
+    <section id="formulario" class="py-16 px-4 bg-[#183662]">
+        <div class="max-w-3xl mx-auto">
+            <div class="text-center mb-10">
+                <h2 class="text-4xl font-bold mb-4">Reserva tu asistencia</h2>
+                <p class="text-white/80 max-w-2xl mx-auto">Cupos limitados. Déjanos tus datos y te confirmamos por
+                    correo.</p>
+            </div>
+
+            <form action="https://formsubmit.co/contacto@intercapitalperu.com" method="POST"
+                class="bg-white rounded-xl p-8 shadow-md text-left">
+                <input type="hidden" name="_next" value="https://intercapitalperu.com/gracias.html">
+                <input type="hidden" name="_captcha" value="false">
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                    <div>
+                        <label for="name" class="block text-[#183662] font-medium mb-2">Nombre Completo</label>
+                        <input id="name" name="name" type="text" required
+                            class="form-input w-full px-4 py-3 rounded-lg border border-gray-300">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-[#183662] font-medium mb-2">Correo Electrónico</label>
+                        <input id="email" name="email" type="email" required
+                            class="form-input w-full px-4 py-3 rounded-lg border border-gray-300">
+                    </div>
+                    <div class="md:col-span-2">
+                        <label for="phone" class="block text-[#183662] font-medium mb-2">Número de Celular</label>
+                        <input id="phone" name="phone" type="tel" required
+                            class="form-input w-full px-4 py-3 rounded-lg border border-gray-300">
+                    </div>
+                </div>
+
+                <div class="text-center mt-6">
+                    <button type="submit"
+                        class="bg-[#183662] text-white font-semibold rounded-lg px-8 py-3 shadow-md hover:shadow-lg hover:bg-[#163055] transition">
+                        Confirmar Registro
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-[#183662] text-white py-8 px-4 border-t border-white/10">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+            <div>
+                <img src="../assets/img/ICP-EMPRESA-PNG.png" alt="Intercapital Perú" class="h-10 md:h-12">
+            </div>
+
+            <div class="text-center md:text-right">
+                <div class="flex justify-center md:justify-end gap-4 mt-2">
+                    <a href="https://www.facebook.com/profile.php?id=61576219722457" target="_blank"
+                        aria-label="Facebook" class="text-white/70 hover:text-white transition">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M22 12.07C22 6.48 17.52 2 12 2S2 6.48 2 12.07c0 4.84 3.44 8.85 8 9.8v-6.93H8v-2.87h2V9.93c0-2.07 1.23-3.22 3.12-3.22.9 0 1.84.16 1.84.16v2.02h-1.04c-1.03 0-1.35.64-1.35 1.29v1.55h2.3l-.37 2.87h-1.93v6.93c4.56-.95 8-4.96 8-9.8z" />
+                        </svg>
+                    </a>
+                    <a href="https://www.instagram.com/intercapitalperu/" target="_blank" aria-label="Instagram"
+                        class="text-white/70 hover:text-white transition">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5a4.25 4.25 0 0 0 4.25-4.25v-8.5A4.25 4.25 0 0 0 16.25 3.5h-8.5zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 1.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7zm4.88-.88a1.13 1.13 0 1 1 0 2.25 1.13 1.13 0 0 1 0-2.25z" />
+                        </svg>
+                    </a>
+                    <a href="https://www.linkedin.com/company/intercapital-per%C3%BA/posts/?feedView=all"
+                        target="_blank" aria-label="LinkedIn" class="text-white/70 hover:text-white transition">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.5 8.25h4V24h-4V8.25zm7.5 0h3.84v2.13h.06c.53-1 1.84-2.13 3.8-2.13 4.06 0 4.81 2.66 4.81 6.11V24h-4v-7.54c0-1.8-.03-4.13-2.52-4.13-2.52 0-2.91 1.97-2.91 4V24h-4V8.25z" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-6">
+            <p class="text-center text-xs text-white/70">
+                Desarrollado con ❤️ por
+                <a href="https://minddevperu.com/" target="_blank" class="underline hover:text-white transition">
+                    Minddev
+                </a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const yearEl = document.getElementById('year');
+            if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+            // 23 de agosto 2025, 08:45 (hora local)
+            const eventDate = new Date(2025, 7, 23, 8, 45, 0);
+
+            const els = {
+                days: document.getElementById('days'),
+                hours: document.getElementById('hours'),
+                minutes: document.getElementById('minutes'),
+                seconds: document.getElementById('seconds'),
+            };
+
+            const pad = n => String(n).padStart(2, '0');
+
+            function tick() {
+                const now = new Date();
+                const distance = eventDate - now;
+
+                if (distance <= 0) {
+                    ['days', 'hours', 'minutes', 'seconds'].forEach(k => els[k] && (els[k].textContent = '00'));
+                    return;
+                }
+
+                const days = Math.floor(distance / 86400000);
+                const hours = Math.floor((distance % 86400000) / 3600000);
+                const minutes = Math.floor((distance % 3600000) / 60000);
+                const seconds = Math.floor((distance % 60000) / 1000);
+
+                if (els.days) els.days.textContent = pad(days);
+                if (els.hours) els.hours.textContent = pad(hours);
+                if (els.minutes) els.minutes.textContent = pad(minutes);
+                if (els.seconds) els.seconds.textContent = pad(seconds);
+            }
+
+            tick();
+            setInterval(tick, 1000);
+        });
+    </script>
+</body>
+
+</html>

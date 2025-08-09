@@ -42,56 +42,34 @@
     </header>
 
     <!-- Hero Section -->
-    <section id="inicio" class="relative min-h-[90vh] flex items-center justify-center pt-20 overflow-hidden">
+    <section id="inicio" class="relative min-h-[90vh] flex items-center justify-center pt-20 overflow-hidden"">
         <!-- Video de fondo -->
-        <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover object-top">
-            <source src="./assets/img/IMAGENES_VIDEO_FONDO_1.mp4" type="video/mp4">
-            Tu navegador no soporta la reproducción de videos.
+        <video autoplay loop muted playsinline class=" absolute inset-0 w-full h-full object-cover object-top">
+        <source src="./assets/img/IMAGENES_VIDEO_FONDO_1.mp4" type="video/mp4">
+        Tu navegador no soporta la reproducción de videos.
         </video>
 
         <!-- Capa oscura para mejorar la legibilidad -->
         <div class="absolute inset-0 bg-black/50"></div>
 
-        <!-- Contenido centrado -->
+        <!-- Contenido -->
         <div class="relative z-10 container mx-auto px-6 py-20 flex flex-col items-center text-center">
-            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 leading-tight text-white">
-                Participa en nuestro <span class="bg-clip-text text-transparent gold-gradient">Evento Inmobiliario
-                    Exclusivo</span>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight text-white">
+                Tu Socio Estratégico en <span class="bg-clip-text text-transparent gold-gradient">Inversiones
+                    Inmobiliarias</span>
             </h1>
 
-            <!-- Video destacado (no de fondo) -->
-            <div class="w-full max-w-2xl rounded-lg overflow-hidden shadow-lg mb-12">
-                <video autoplay muted loop playsinline class="w-full h-full object-cover">
-                    <source
-                        src="https://assets.mixkit.co/videos/preview/mixkit-group-of-people-cheering-at-a-concert-4640-large.mp4"
-                        type="video/mp4">
-                </video>
-            </div>
-
-            <!-- Contador -->
-            <div class="bg-white bg-opacity-90 text-gray-800 rounded-lg p-6 shadow-lg max-w-md mx-auto">
-                <h2 class="text-2xl font-semibold mb-4 text-center">¡Faltan solo!</h2>
-                <div class="flex justify-center space-x-4 md:space-x-6">
-                    <div class="countdown-item bg-gray-100 rounded-lg p-3 text-center">
-                        <div class="text-3xl font-bold" id="days">00</div>
-                        <div class="text-sm text-gray-500">Días</div>
-                    </div>
-                    <div class="countdown-item bg-gray-100 rounded-lg p-3 text-center">
-                        <div class="text-3xl font-bold" id="hours">00</div>
-                        <div class="text-sm text-gray-500">Horas</div>
-                    </div>
-                    <div class="countdown-item bg-gray-100 rounded-lg p-3 text-center">
-                        <div class="text-3xl font-bold" id="minutes">00</div>
-                        <div class="text-sm text-gray-500">Minutos</div>
-                    </div>
-                    <div class="countdown-item bg-gray-100 rounded-lg p-3 text-center">
-                        <div class="text-3xl font-bold" id="seconds">00</div>
-                        <div class="text-sm text-gray-500">Segundos</div>
-                    </div>
-                </div>
+            <div class="flex space-x-60 py-20">
+                <a href="#cursos">
+                    <img src="./assets/img/DPI-EMPRESA-PNG.png" alt="Explorar cursos"
+                        class="w-40 h-auto rounded-lg  hover:scale-105 transition-transform duration-300">
+                </a>
+                <a href="https://intercapitalperu.com/" target="_blank">
+                    <img src="./assets/img/ICP-EMPRESA-PNG.png" alt="Contactar"
+                        class="w-40 h-auto rounded-lg  hover:scale-105 transition-transform duration-300">
+                </a>
             </div>
         </div>
-
         <!-- Recorte inferior -->
         <div class="absolute bottom-0 left-0 w-full h-40 bg-white" style="clip-path: polygon(0 0, 100% 100%, 0 100%);">
         </div>

@@ -32,25 +32,43 @@
         </div>
     </header>
 
-    <!-- Hero con video -->
     <section class="relative min-h-screen flex items-center justify-center bg-cover bg-center text-center text-white"
         style="background-image: url('../assets/img/FONDO1.png');">
-        <!-- Capa oscura -->
+
         <div class="absolute inset-0 bg-black/50"></div>
 
-        <!-- Contenido -->
-        <div class="relative z-10 container mx-auto px-6">
+        <div class="relative z-10 container mx-auto px-6 mt-20">
             <h1 class="text-4xl md:text-5xl font-bold mb-6">Próximos Eventos</h1>
-            <p class="text-gray-200 max-w-2xl mx-auto mb-8">
+            <p class="text-gray-200 max-w-2xl mx-auto mb-12">
                 Descubre mis próximos viajes, charlas y experiencias diseñadas para tu crecimiento personal y
                 profesional.
             </p>
-            <!-- <div class="relative max-w-3xl mx-auto">
-                <video controls class="w-full rounded-lg shadow-xl">
-                    <source src="../assets/video/intro-eventos.mp4" type="video/mp4">
-                    Tu navegador no soporta la reproducción de videos.
-                </video>
-            </div> -->
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+
+                <!-- Evento 1 -->
+                <a href="/eventos/dpi-landing.html" target="_blank"
+                    class="group relative block rounded-lg overflow-hidden shadow-lg">
+                    <img src="../assets/img/DPI-21-08.jpg" alt="Evento 1"
+                        class="w-full h-[700px] object-cover transform transition duration-500 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+                        <span class="text-white text-lg font-semibold">Ver más</span>
+                    </div>
+                </a>
+
+                <!-- Evento 2 -->
+                <a href="./icp-lading.html" target="_blank"
+                    class="group relative block rounded-lg overflow-hidden shadow-lg">
+                    <img src="../assets/img/ICP-23-08.png" alt="Evento 2"
+                        class="w-full h-[700px] object-cover transform transition duration-500 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+                        <span class="text-white text-lg font-semibold">Ver más</span>
+                    </div>
+                </a>
+
+            </div>
         </div>
     </section>
 
