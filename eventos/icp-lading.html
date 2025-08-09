@@ -61,8 +61,8 @@
             </p>
 
             <div class="relative rounded-xl overflow-hidden shadow-lg mb-10 max-w-3xl mx-auto border border-white/10">
-                <video autoplay muted loop playsinline class="w-full h-full object-cover">
-                    <source src="../assets/video/desayuno-inversionistas.mp4" type="video/mp4">
+                <video autoplay loop playsinline class="w-full h-full object-cover">
+                    <source src="../assets/video/VIDEO INVITACION ICP.mp4" type="video/mp4">
                     Tu navegador no soporta la reproducción de videos.
                 </video>
             </div>
@@ -122,10 +122,9 @@
                     correo.</p>
             </div>
 
-            <form action="https://formsubmit.co/contacto@intercapitalperu.com" method="POST"
+            <form id="registroForm" action="https://getform.io/f/bejeynma" method="POST"
                 class="bg-white rounded-xl p-8 shadow-md text-left">
-                <input type="hidden" name="_next" value="https://intercapitalperu.com/gracias.html">
-                <input type="hidden" name="_captcha" value="false">
+
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                     <div>
@@ -154,6 +153,15 @@
             </form>
         </div>
     </section>
+
+    <div id="toast"
+        class="fixed bottom-6 right-6 z-50 hidden items-center gap-3 max-w-sm rounded-lg bg-white text-[#183662] shadow-xl px-4 py-3 border border-[#183662]/15"
+        role="alert" aria-live="polite" aria-atomic="true">
+        <svg viewBox="0 0 24 24" class="w-5 h-5 text-green-600" fill="currentColor">
+            <path d="M12 2a10 10 0 1 0 .001 20.001A10 10 0 0 0 12 2m-1 15-4-4 1.41-1.41L11 13.17l5.59-5.59L18 9z" />
+        </svg>
+        <span id="toastMsg" class="text-sm font-medium">¡Gracias por registrarte!</span>
+    </div>
 
     <!-- FOOTER -->
     <footer class="bg-[#183662] text-white py-8 px-4 border-t border-white/10">
@@ -239,6 +247,49 @@
             tick();
             setInterval(tick, 1000);
         });
+
+        (function () {
+            const form = document.getElementById('registroForm');
+            const toast = document.getElementById('toast');
+            const toastMsg = document.getElementById('toastMsg');
+
+            function showToast(message = '¡Gracias por registrarte!', ms = 3500) {
+                toastMsg.textContent = message;
+                toast.classList.remove('hidden');
+                toast.classList.add('flex', 'animate-[fadeIn_.2s_ease-out]');
+                // Ocultar después de X ms
+                setTimeout(() => {
+                    toast.classList.add('animate-[fadeOut_.2s_ease-in]');
+                    setTimeout(() => {
+                        toast.classList.add('hidden');
+                        toast.classList.remove('flex', 'animate-[fadeIn_.2s_ease-out]', 'animate-[fadeOut_.2s_ease-in]');
+                    }, 180);
+                }, ms);
+            }
+
+            // Enviar con fetch a Getform para evitar redirección
+            form.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const fd = new FormData(form);
+
+                try {
+                    const res = await fetch(form.action, {
+                        method: 'POST',
+                        body: fd,
+                        headers: { 'Accept': 'application/json' }
+                    });
+
+                    if (res.ok) {
+                        form.reset();
+                        showToast('¡Gracias por registrarte! Nos vemos pronto.');
+                    } else {
+                        showToast('Ocurrió un problema. Inténtalo nuevamente.', 4000);
+                    }
+                } catch (err) {
+                    showToast('Sin conexión. Inténtalo nuevamente.', 4000);
+                }
+            });
+        })();
     </script>
 </body>
 
