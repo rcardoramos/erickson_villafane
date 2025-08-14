@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis Redes Sociales</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #4361ee;
+            --secondary: #3f37c9;
+            --accent: #4895ef;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --spacing: 8px;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0d3153 0%, #3b82f6 100%);
+            ;
+            color: var(--dark);
+            line-height: 1.6;
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 500px;
+            margin: 0 auto;
+            background: white;
+            border: 3px solid transparent;
+            border-color: #00F5BC;
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, .08);
+        }
+
+        .profile {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .profile-pic {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #00f5bc;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            margin-bottom: 1rem;
+            transition: var(--transition);
+        }
+
+        .profile-pic:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+
+        p.bio {
+            color: #666;
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+
+        .links {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            width: 100%;
+        }
+
+        .link {
+            padding: 15px 20px;
+            border-radius: 10px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            transition: var(--transition);
+        }
+
+        .link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .link i {
+            font-size: 1.5rem;
+            width: 40px;
+            text-align: center;
+        }
+
+        .link-text {
+            flex-grow: 1;
+        }
+
+        .link-text h3 {
+            font-size: 1rem;
+            margin-bottom: 2px;
+        }
+
+        .link-text p {
+            font-size: 0.85rem;
+            color: white;
+        }
+
+        footer {
+            margin-top: 2rem;
+            text-align: center;
+            color: #999;
+            font-size: 0.9rem;
+        }
+
+        /* Social Colors */
+        .instagram {
+            background: linear-gradient(45deg, #833ab4, #fd1d1d, #fcb045);
+            color: white;
+        }
+
+        .facebook {
+            background: #4267B2;
+            color: white;
+        }
+
+        .twitter {
+            background: #1DA1F2;
+            color: white;
+        }
+
+        .linkedin {
+            background: #0077B5;
+            color: white;
+        }
+
+        .youtube {
+            background: #FF0000;
+            color: white;
+        }
+
+        .tiktok {
+            background: #000000;
+            color: white;
+        }
+
+        .whatsapp {
+            background: #25D366;
+            color: white;
+        }
+
+        @media (max-width: 500px) {
+            .container {
+                padding: 0 15px;
+            }
+
+            .link {
+                padding: 12px 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="profile">
+            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/24432a81-ccc8-48c1-accb-6283f2fedf2c.png"
+                alt="Foto de perfil del usuario mostrando una persona sonriente con un fondo desenfocado de ciudad"
+                class="profile-pic">
+            <h1>Mis Redes Sociales</h1>
+            <p class="bio">Conéctate conmigo en diferentes plataformas</p>
+        </div>
+
+        <div class="links">
+            <a href="https://instagram.com" class="link instagram" target="_blank">
+                <i class="fab fa-instagram"></i>
+                <div class="link-text">
+                    <h3>Instagram</h3>
+                    <p>Sígueme para contenido diario</p>
+                </div>
+            </a>
+
+            <a href="https://facebook.com" class="link facebook" target="_blank">
+                <i class="fab fa-facebook-f"></i>
+                <div class="link-text">
+                    <h3>Facebook</h3>
+                    <p>Conéctate en la red social más grande</p>
+                </div>
+            </a>
+
+            <a href="https://twitter.com" class="link twitter" target="_blank">
+                <i class="fab fa-twitter"></i>
+                <div class="link-text">
+                    <h3>Twitter</h3>
+                    <p>Mis pensamientos y noticias</p>
+                </div>
+            </a>
+
+            <a href="https://linkedin.com" class="link linkedin" target="_blank">
+                <i class="fab fa-linkedin-in"></i>
+                <div class="link-text">
+                    <h3>LinkedIn</h3>
+                    <p>Mi perfil profesional</p>
+                </div>
+            </a>
+
+            <a href="https://youtube.com" class="link youtube" target="_blank">
+                <i class="fab fa-youtube"></i>
+                <div class="link-text">
+                    <h3>YouTube</h3>
+                    <p>Suscríbete a mi canal</p>
+                </div>
+            </a>
+
+            <a href="https://tiktok.com" class="link tiktok" target="_blank">
+                <i class="fab fa-tiktok"></i>
+                <div class="link-text">
+                    <h3>TikTok</h3>
+                    <p>Contenido viral y divertido</p>
+                </div>
+            </a>
+
+            <!-- <a href="https://wa.me/" class="link whatsapp" target="_blank">
+                <i class="fab fa-whatsapp"></i>
+                <div class="link-text">
+                    <h3>WhatsApp</h3>
+                    <p>Contáctame directamente</p>
+                </div>
+            </a> -->
+        </div>
+
+        <footer>
+            © 2023 Todos los derechos reservados
+        </footer>
+    </div>
+</body>
+
+</html>
