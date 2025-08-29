@@ -48,22 +48,53 @@
             <img src="../assets/img/ICP-EMPRESA-PNG.png" alt="Intercapital Perú" class="h-12 md:h-24">
         </div>
     </a>
+
     <section id="inicio" class="min-h-[90vh] bg-[#183662] flex items-center justify-center py-16 px-4 text-center">
         <div class="max-w-4xl mx-auto">
-            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-                Desayuno de Empresarial<br>
+            <!-- TITULAR -->
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-white">
+                Desayuno Empresarial<br>
                 <span class="text-sky-300">Intercapital Perú</span>
             </h1>
+
             <p class="text-white/80 lg:text-xl max-w-3xl mx-auto mb-10">
                 Conecta con oportunidades inmobiliarias, conoce proyectos en vivo y aprende a estructurar inversiones
                 seguras y rentables.
             </p>
 
-            <div class="relative rounded-xl overflow-hidden shadow-lg mb-10 max-w-3xl mx-auto border border-white/10">
-                <video autoplay loop playsinline class="w-full h-full object-cover">
-                    <source src="../assets/video/INTERCAPITAL DESAYUNO.MP4" type="video/mp4">
-                    Tu navegador no soporta la reproducción de videos.
-                </video>
+            <!-- VIDEO con overlay -->
+            <div class="relative max-w-3xl mx-auto mb-10">
+                <div class="p-[2px] rounded-2xl bg-gradient-to-br from-white/20 via-white/5 to-white/0">
+                    <div class="relative rounded-2xl overflow-hidden shadow-2xl ring-1 ring-white/10">
+                        <div class="aspect-[16/9] bg-black">
+                            <video id="heroVideo" class="w-full h-full object-cover" playsinline preload="metadata"
+                                poster="../assets/video/intercapital_poster.jpg">
+                                <source src="../assets/video/INTERCAPITAL DESAYUNO.MP4" type="video/mp4">
+                                Tu navegador no soporta la reproducción de videos.
+                            </video>
+                        </div>
+
+                        <!-- Botón overlay -->
+                        <button id="playToggle"
+                            class="absolute inset-0 m-auto w-16 h-16 grid place-items-center rounded-full bg-black/50 hover:bg-black/60 transition"
+                            aria-label="Reproducir/Pausar">
+                            <!-- Play -->
+                            <svg id="iconPlay" class="w-7 h-7 text-white" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M8 5v14l11-7z" />
+                            </svg>
+                            <!-- Pause -->
+                            <svg id="iconPause" class="w-7 h-7 text-white hidden" viewBox="0 0 24 24"
+                                fill="currentColor">
+                                <path d="M6 5h4v14H6zm8 0h4v14h-4z" />
+                            </svg>
+                        </button>
+
+                        <!-- Texto sobre el video -->
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4">
+                            <p class="text-sm text-white/90">Vive la experiencia de invertir con seguridad.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <!-- CONTADOR -->
@@ -89,6 +120,7 @@
                 </div>
             </div>
 
+            <!-- BOTÓN CTA -->
             <div class="mt-7">
                 <a href="#formulario"
                     class="inline-block bg-white text-[#183662] font-semibold rounded-lg px-8 py-3 shadow-md hover:shadow-lg hover:bg-sky-300 transition">
@@ -107,7 +139,7 @@
                 experto.
             </p>
             <div class="rounded-xl overflow-hidden shadow-lg max-w-4xl mx-auto border border-white/10">
-                <img src="../assets/img/ICP-23-08.webp" alt="Desayuno de inversionistas" class="w-full h-auto">
+                <img src="../assets/img/evento-ipc.webp" alt="Desayuno de inversionistas" class="w-full h-auto">
             </div>
         </div>
     </section>
@@ -210,7 +242,7 @@
             if (yearEl) yearEl.textContent = new Date().getFullYear();
 
             // 23 de agosto 2025, 08:45 (hora local)
-            const eventDate = new Date(2025, 7, 23, 8, 45, 0);
+            const eventDate = new Date(2025, 8, 13, 8, 45, 0);
 
             const els = {
                 days: document.getElementById('days'),
@@ -287,6 +319,36 @@
                 }
             });
         })();
+        (function () {
+            const video = document.getElementById('heroVideo');
+            const btn = document.getElementById('playToggle');
+            const iconPlay = document.getElementById('iconPlay');
+            const iconPause = document.getElementById('iconPause');
+
+            function sync() {
+                const playing = !video.paused && !video.ended;
+                iconPlay.classList.toggle('hidden', playing);
+                iconPause.classList.toggle('hidden', !playing);
+                btn.setAttribute('aria-pressed', playing ? 'true' : 'false');
+            }
+
+            async function toggle() {
+                if (video.paused || video.ended) {
+                    try { await video.play(); } catch (e) { console.warn(e); }
+                } else {
+                    video.pause();
+                }
+                sync();
+            }
+
+            btn.addEventListener('click', toggle);
+            video.addEventListener('click', toggle);
+
+            // inicia pausado
+            video.pause();
+            sync();
+        })();
+
     </script>
 </body>
 

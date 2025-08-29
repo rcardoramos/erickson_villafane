@@ -101,24 +101,51 @@
     <section id="inicio"
         class="min-h-[90vh] bg-[#0A2342] flex items-center justify-center py-20 px-4 text-white text-center">
         <div class="max-w-4xl mx-auto">
-
-            <h1 class="text-5xl md:text-10xl lg:text-7xl font-bold mb-10 leading-tight">
-                Encuentra tu propiedad <br> <span class="text-yellow-500 ">ideal</span>
+            <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight">
+                Encuentra tu propiedad <br> <span class="text-yellow-500">ideal</span>
             </h1>
 
-            <p class="lg:text-2xl"> Somos especialistas en conectar a las personas con los mejores espacios para vivir,
-                trabajar y crecer.
+            <p class="lg:text-2xl mb-8">
+                Somos especialistas en conectar a las personas con los mejores espacios para vivir, trabajar y crecer.
             </p>
-            <br>
-            <div class="relative rounded-lg overflow-hidden shadow-lg mb-12 max-w-3xl mx-auto">
-                <video autoplay loop playsinline class="w-full h-full object-cover">
-                    <source src="../assets/video/VIDEO INVITACIÓN EVENTO.mp4" type="video/mp4">
-                    Tu navegador no soporta la reproducción de videos.
-                </video>
+
+            <!-- Marco con gradiente sutil + video 16:9 -->
+            <div class="relative max-w-5xl mx-auto">
+                <div class="p-[2px] rounded-2xl bg-gradient-to-br from-white/20 via-white/5 to-white/0">
+                    <div class="relative rounded-2xl overflow-hidden shadow-2xl ring-1 ring-white/10">
+                        <div class="aspect-[16/9] bg-black">
+                            <video id="heroVideo" class="w-full h-full object-cover" playsinline preload="metadata"
+                                poster="/video/video_hero_poster.jpg">
+                                <source src="../assets/video/VIDEO INVITACIÓN EVENTO.mp4" type="video/mp4">
+                                Tu navegador no soporta la reproducción de videos.
+                            </video>
+                        </div>
+
+                        <!-- Overlay controles -->
+                        <button id="playToggle"
+                            class="absolute inset-0 m-auto w-16 h-16 grid place-items-center rounded-full bg-black/50 hover:bg-black/60 transition"
+                            aria-label="Reproducir/Pausar">
+                            <!-- ícono play -->
+                            <svg id="iconPlay" class="w-7 h-7 text-white" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M8 5v14l11-7z" />
+                            </svg>
+                            <!-- ícono pause (oculto al inicio) -->
+                            <svg id="iconPause" class="w-7 h-7 text-white hidden" viewBox="0 0 24 24"
+                                fill="currentColor">
+                                <path d="M6 5h4v14H6zm8 0h4v14h-4z" />
+                            </svg>
+                        </button>
+
+                        <!-- Caption opcional -->
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/50 to-transparent p-4">
+                            <p class="text-sm text-white/90">Conoce nuestro método para invertir con seguridad.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <!-- CONTADOR -->
-            <div class="bg-yellow-500 bg-opacity-90 text-gray-800 rounded-lg p-6 shadow-lg max-w-md mx-auto">
+            <!-- CONTADOR (se deja tal cual) -->
+            <div class="bg-yellow-500 bg-opacity-90 text-gray-800 rounded-lg p-6 shadow-lg max-w-md mx-auto mt-8">
                 <h2 class="text-2xl font-semibold mb-4 text-center">¡Faltan solo!</h2>
                 <div class="flex justify-center space-x-4 md:space-x-6">
                     <div class="countdown-item bg-gray-100 rounded-lg p-3 text-center">
@@ -139,13 +166,13 @@
                     </div>
                 </div>
             </div>
+
             <div class="mt-6">
                 <a href="#formulario"
                     class="inline-block bg-yellow-500 hover:bg-yellow-600 text-white font-medium rounded-lg px-8 py-3 shadow-md hover:shadow-lg transition duration-300">
                     Reservar mi cupo
                 </a>
             </div>
-
         </div>
     </section>
 
@@ -158,7 +185,7 @@
 
             <!-- Imagen del evento -->
             <div class="rounded-xl overflow-hidden shadow-lg max-w-4xl mx-auto">
-                <img src="../assets/img/DPI-21-08.webp" alt="Imagen del evento" class="w-full h-auto">
+                <img src="../assets/img/evento-dpi.webp" alt="Imagen del evento" class="w-full h-auto">
             </div>
         </div>
     </section>
@@ -263,7 +290,7 @@
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             // 21 de agosto de 2025, 18:45 hora local 
-            const eventDate = new Date(2025, 7, 21, 18, 45, 0);
+            const eventDate = new Date(2025, 8, 18, 18, 45, 0);
 
             const pad = n => String(n).padStart(2, "0");
 
@@ -335,6 +362,39 @@
                     showToast('Sin conexión. Inténtalo nuevamente.', 4000);
                 }
             });
+        })();
+
+        (function () {
+            const video = document.getElementById('heroVideo');
+            const btn = document.getElementById('playToggle');
+            const iconPlay = document.getElementById('iconPlay');
+            const iconPause = document.getElementById('iconPause');
+
+            function sync() {
+                const playing = !video.paused && !video.ended;
+                iconPlay.classList.toggle('hidden', playing);
+                iconPause.classList.toggle('hidden', !playing);
+                btn.setAttribute('aria-pressed', playing ? 'true' : 'false');
+            }
+
+            async function toggle() {
+                if (video.paused || video.ended) {
+                    try { await video.play(); } catch (e) { console.warn(e); }
+                } else {
+                    video.pause();
+                }
+                sync();
+            }
+
+            btn.addEventListener('click', toggle);
+            video.addEventListener('click', toggle);
+            btn.addEventListener('keydown', e => {
+                if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); }
+            });
+
+            // Inicia en pausa mostrando el botón
+            video.pause();
+            sync();
         })();
     </script>
 </body>
